@@ -263,6 +263,7 @@ public class PESignerTask extends Task {
             log("Adding Authenticode signature to " + FileUtils.getRelativePath(getProject().getBaseDir(), file));
             signer.sign(peFile);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new BuildException("Couldn't sign " + file, e);
         } finally {
             try {
